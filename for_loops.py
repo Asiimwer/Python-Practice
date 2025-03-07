@@ -19,3 +19,4 @@ for number in table:
    print(number,"X 2 =",number*2)
   # print(number,"X",number,"=",number*number)
 print(table[0])
+print("scenario")
