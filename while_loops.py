@@ -16,7 +16,7 @@ for item in items:
     print(item)
 # Using "break" This breaks the loop as soon as the condition is met
 for item in items: 
-    if item == 4:
+    if item == 34:
       break
     print(item)
 #Multiplication tables
@@ -25,4 +25,4 @@ no = 0
 while no < len(table):
    number = table[no]
    print(number,"X 2 =",number*2)
-   no += 3 
+   no += 1 
