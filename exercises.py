@@ -1,6 +1,7 @@
 #  1. Number Guessing game
-number = 21
-answer = 10
+import random
+number = random.randint(1,10)
+answer = 0000
 if answer == number:
     print("well done you have passed")
 if answer > number:
@@ -22,29 +23,11 @@ if answer == 0000:
 #      print()
 
 #  3. Experiment 
-number = 0
-answer = 1
-# for fig in number:
-#     if answer == number:
-#         print(number,"is the answer, well done you have passed!!")
-#     else:
-#         print("Shot above the ceiling")
-#     number+= 1
-# This imports random numbers from a list
-# import random
+students = ["Ahumuza Asiimwe","Kiconco Kabagyesera","Timothy Nishaba","Titus Nishaba","Truman Nishaba","Tabitha Nishaba"]
+for index, name in enumerate(students, start=1):
+ print(f"{index}. {name} \n")
+#In a dictionary 
+products ={'Cake':5000 ,'Books':5000,'Board':50000, 'pens':1500, 'Set':6000}
+for index,(items, price) in enumerate (products.items(),start=1):
+ print(f"{index}. {items} - {price}")
 # num = random.randint(1, 10)  # Picks a random number between 1 and 10
-# print(num)
-import tkinter as tk  # Import Tkinter
-
-# Create the main window
-root = tk.Tk()
-
-# Set the window title
-root.title("My First Tkinter App")
-
-# Set window size (width x height)
-root.geometry("400x300")
-
-# Run the window
-root.mainloop()
-

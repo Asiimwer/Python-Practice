@@ -18,17 +18,15 @@ else :
     print("Incorrect Pin")
 
 # For Loops
-list = [5,7,8,9,10,12,18,20,23,24,12,30]
-underage = 0
+list = range(1,30,2)
+underage= 0
 adult = 0
 for age in list:
     if age < 18:
-        underage += 1
-    if age >= 18:
-        adult  += 1
-print("Underage = ",underage)
-print("Adult = ",adult)
-table = [1,2,3,4,5,6,7,8,9,10]
+        underage += 1  
+    else:
+      adult += 1
+print(f"Underage = {underage} \n Adults = {adult}")
 # for num in  table:
     # print("2 x ",num,"=", num *2)
 # While loops
@@ -44,6 +42,4 @@ table = [1,2,3,4,5,6,7,8,9,10]
 #     print(i)
     
 # Nested loops
-for x in range (4):
-    for y in (0,1,2):
-        print(x,y)
+
