@@ -24,8 +24,7 @@ if answer == 0000:
 
 #  3. Experiment 
 students = ["Ahumuza Asiimwe","Kiconco Kabagyesera","Timothy Nishaba","Titus Nishaba","Truman Nishaba","Tabitha Nishaba"]
-for index, name in enumerate(students, start=1):
- print(f"{index}. {name} \n")
+# studs = [(indexs, words) indexs for words in enumerate(students, start=1)]
 #In a dictionary 
 products ={'Cake':5000 ,'Books':5000,'Board':50000, 'pens':1500, 'Set':6000}
 for index,(items, price) in enumerate (products.items(),start=1):
