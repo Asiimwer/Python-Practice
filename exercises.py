@@ -30,3 +30,16 @@ products ={'Cake':5000 ,'Books':5000,'Board':50000, 'pens':1500, 'Set':6000}
 for index,(items, price) in enumerate (products.items(),start=1):
  print(f"{index}. {items} - {price}")
 # num = random.randint(1, 10)  # Picks a random number between 1 and 10
+results =[('Humu', 99), ('kkj',90), ('cliff',80), ('agaba',78)]
+def performance(result):
+    top_student =''
+    highest_grade = 0
+    for name,grade in results:
+        if grade > highest_grade:
+            highest_grade = grade
+            top_student = name
+        else:
+            pass
+    return  top_student, highest_grade
+top_student,highest_grade = performance(results)
+print(f"{top_student} : {highest_grade}")

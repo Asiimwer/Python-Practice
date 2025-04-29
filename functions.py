@@ -72,3 +72,34 @@ def performance(g_results):
 s_name, s_mark = performance(g_results)
 print(f"Best performer is {s_name} : {s_mark}")
 
+# interations in functions
+# from random import shuffle that imports the shuffling extention
+numbers = [1, 6, 5, 0, 8, 8, 4, 2, 3]
+cup_monte =['',0,'']
+def shuffling(list):
+       from random import shuffle
+       for num in numbers:
+          shuffle(list)
+         
+       return list
+       
+result = shuffling(cup_monte)
+
+def player_guess():
+    guess = ''
+    while guess not in ['1','2','3']:
+       guess = input("Enter 1,2 or 3").strip()
+    return int(guess)
+
+num_chosen = player_guess()
+
+def check(shuffling,player_guess):
+    if cup_monte[player_guess] == 0:
+        print(f"Well done Correct!!!")
+    else:
+        print(f"Wong answer!!")
+        print(f"{cup_monte}")
+cup_monte =['',0,'']
+result = shuffling(cup_monte)
+num_chosen = player_guess()
+check(shuffling,player_guess)
