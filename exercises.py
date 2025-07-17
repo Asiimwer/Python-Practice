@@ -52,3 +52,47 @@ def number_comp(num1,num2):
            return max(num1,num2)
 myfunc = number_comp(3,7)
 print(myfunc)
+
+
+class BankAccount():
+    def __init__(self,account_holder,balance):
+        self.holder = account_holder
+        self.balance = balance
+    
+        
+    def deposit(self,amount):
+        while amount < 100 :
+            print("Amout must be minimum $100 ")
+        else :self.balance += amount
+        print(f"Cash amount {amount} has been deposited by {self.holder} new balance is {self.balance}")
+    def withdraw(self,amount):
+        if amount > self.balance:
+            print("Insufficient funds")
+        else:self.balance -= amount
+        print(f"Amount {amount} has been withdraw, new balance is {self.balance}")
+    def check(self):
+        print(self.balance)
+
+    def operator(self):
+        print("Hello there!", self.holder[0])
+        print("Welcome to Timbrel Bank. What can we do for you here ? ")
+        print("Choose 1 for Deposit")
+        print("Choose 2 for Withdraw")
+        print("Choose 3 to check balance")
+        activity = int(input("Input : "))
+        if activity == 1:
+            amount = int(input("Input amount to deposit : "))
+            self.deposit(amount)
+        elif activity == 2:
+              amount = int(input("Enter withdraw amout : ")) 
+              self.withdraw(amount)
+        elif activity == 3:
+            self.check()
+        else:
+            print("Invalid choice")
+
+client1 = BankAccount("Ahumuza Asiimwe",0)
+client2 = BankAccount("Agaba Kakuru", 0)
+client1.operator()
+
+
