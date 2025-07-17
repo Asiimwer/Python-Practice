@@ -1,45 +1,43 @@
-# files
-with open('textie.txt', 'w') as text_file :
-    file_name = text_file.write("I have not done this in a minute")
-with open('textie.txt','a') as text_file :
-    file_name = text_file.write("\n I am going to do this everyday just to get in in mind \n Day 1 -17/03/25 @ 07:23 \n I NEED TO LEARN MORE ADVANCED LOOPS IN MY FREE TIME ")
+#IF STATEMENTS
+name = "Ahumuza Asiimwe"
+mark = 65
+if mark >= 85 :
+    print(f"Congratulations {name}, you have passed with a distinction")
+elif mark >= 70:
+    print(f"Congratulations {name}, you have passed with a credit")
+elif mark >=60 :
+    print(f"Congratulations {name}, you have passed with a merit")
+elif mark >= 50:
+    print(f"Congratulations {name}, you have passed with a pass")
+else:
+    print(f"Sorry {name}, you have failed. Please try again next time")
 
-# dictionaries
-items = {'a000001':5000,'a000003':4500, 'Flour':6000, 'Oil':4900}
-currency = "UGX"
-items['water'] = 2000
-items['Oil'] = 6000
-print(items['a000003'])
-# Control flow
-Pin = 12345
-if Pin == 1234 :
-    print ("Transaction successful!")
-else :
-    print("Incorrect Pin")
+#FOR LOOPS
+marks = [45, 67, 89, 90, 34, 56, 78]
+marks_sum = 0
+for mark in marks :
+   marks_sum = marks_sum + mark
+   average = marks_sum / len(marks)
+print(f"{name.split()[0]}'s  total  mid term marks are {marks_sum} ")
+print(f"Average min term marks are {average:.1f}")
 
-# For Loops
-list = range(1,30,2)
-underage= 0
-adult = 0
-for age in list:
-    if age < 18:
-        underage += 1  
-    else:
-      adult += 1
-print(f"Underage = {underage} \n Adults = {adult}")
-# for num in  table:
-    # print("2 x ",num,"=", num *2)
-# While loops
-# x = 0
-# while x < 100 :
-#     x += 1
-#     print (x,"x 2 =",x*2 )
-# else:
-#     print("X is now > 0")
+tup = [("Ahumuza", "Asiimwe"), ("Austin", "Kagaba"), ("Zara", "Nabukenya")]
+for (a,b) in tup:
+    print(f"Username : {a[0]}_{b.lower()}")
 
-#  Using range. 
-# for i in range(1, 10, 2):  # Generates 1, 3, 5, 7, 9 by adding 2 which is at the end
-#     print(i)
-    
-# Nested loops
+#WHILE LOOPS 
+number1 = 1
+number2 = 0
+while number2 <12:
+    # print(f"{number1} x {number2} = {number1 * number2}")
+    number2 +=1
 
+#Useful functions
+# Using range
+for num in range(1,10,2):
+    print(num)
+#using shuffele 
+from random import shuffle
+numbers = [1, 2, 3, 4, 5]
+shuffle(numbers)
+print("Shuffled numbers:", numbers)

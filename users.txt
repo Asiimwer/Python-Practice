@@ -1,0 +1,4 @@
+All Users:All Users: 
+ A_humuza 
+ 123456789
+ a_kakuru : kuyu123[{'Name': 'Ahumuza', 'sex': 'M'}, {'Name': 'Austin', 'sex': 'M'}, {'Name': 'Zara', 'sex': 'F'}, {'Name': 'Maya', 'sex': 'F'}]

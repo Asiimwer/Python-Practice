@@ -1,45 +1,54 @@
-#  1. Number Guessing game
-import random
-number = random.randint(1,10)
-answer = 0000
-if answer == number:
-    print("well done you have passed")
-if answer > number:
-    print("Shot above the ceiling")
+# # Practice for args and kwargs 
+# def student_profile(*args,**kwargs):
+#     return {
+#         'basic_info' : args,
+#         'activities' : kwargs
+#     }
+# print(f"Student profile")
+# names =input("Input student names : ")
+# grades =  int(input("Input student grades : Yr. "))
+# while grades not in (range(7,14)):
+#     print("Enter valid grade")
+#     grades = int(input("Input student grades : Yr. "))
+# streams = input("Input student streams :    ")
+# if grades == 13:
+#     av_stream = ['Raptors', 'Royals', 'Klugers']
+# while streams not in (av_stream):
+#     print("Enter corect stream")
+#     print("Strams inlude 'Raptors','Royals' and 'Klugers'")
+#     streams = input("Input student streams :    ")
+# dobs = input("Input student Date of Birth  :    ")
+# student_p = student_profile('submittedhomework', 'played guitar', name = names, grade = grades, stream = streams, dob = dobs)
+# print(student_p)
+# def myfunc(*args):
+#     even_numbers = []
+#     for number in args:
+#         if number %2 == 0:
+#          even_numbers.append(number)
+#     return even_numbers
+           
+# print(myfunc(1,3,8,4,5,6,7,6))
+# def even_letters(word):
+#    new_word = ''
+#    for index, letter in enumerate(word):
+#       if index % 2 == 0:
+#           new_word += letter.upper()
+#       else:
+#          new_word += letter
+#    return new_word
+# print(even_letters('Anthropomorphism'))
+      
 
-elif number - answer <= 10:
-    print("Its getting hot but try again")
+# EXERCISES FOR PYTHON
 
-elif number - answer > 10:
-    print("Sorry that is not correct \n \n Try again!!")
-
-if answer == 0000:
-    print("You lost but the answer is ", number)
-
-# 2. Multiplication tables
-# for figure in range(1,13):
-#     for number in range(1,13):
-#      print(f"{figure} X {number} = {figure*number}",end ="")
-#      print()
-
-#  3. Experiment 
-students = ["Ahumuza Asiimwe","Kiconco Kabagyesera","Timothy Nishaba","Titus Nishaba","Truman Nishaba","Tabitha Nishaba"]
-# studs = [(indexs, words) indexs for words in enumerate(students, start=1)]
-#In a dictionary 
-products ={'Cake':5000 ,'Books':5000,'Board':50000, 'pens':1500, 'Set':6000}
-for index,(items, price) in enumerate (products.items(),start=1):
- print(f"{index}. {items} - {price}")
-# num = random.randint(1, 10)  # Picks a random number between 1 and 10
-results =[('Humu', 99), ('kkj',90), ('cliff',80), ('agaba',78)]
-def performance(result):
-    top_student =''
-    highest_grade = 0
-    for name,grade in results:
-        if grade > highest_grade:
-            highest_grade = grade
-            top_student = name
-        else:
-            pass
-    return  top_student, highest_grade
-top_student,highest_grade = performance(results)
-print(f"{top_student} : {highest_grade}")
+# LESSER OF TWO EVENS IF EVEN AND GREATER OF TWO ODD 
+def number_comp(num1,num2):
+    even = ''
+    odd = ''
+   
+    if num1 %2==0 and num2 %2 == 0:
+           return min(num1,num2)
+    else:
+           return max(num1,num2)
+myfunc = number_comp(3,7)
+print(myfunc)
