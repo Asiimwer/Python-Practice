@@ -1,0 +1,22 @@
+{
+    " St001": {
+        "Name": "Ahumuza",
+        "sex": "M"
+    },
+    " St002": {
+        "Name": "Austin",
+        "sex": "M"
+    },
+    " St003": {
+        "Name": "Zara",
+        "sex": "F"
+    },
+    " St004": {
+        "Name": "Maya",
+        "sex": "F"
+    },
+    "su004": {
+        "Name": "Sharif Uddin",
+        "sex": "male"
+    }
+}

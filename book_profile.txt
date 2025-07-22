@@ -1,0 +1,9 @@
+
+ Title : Business course book  
+ Author : Margret Nshekanabo 
+ Pages : 899 
+ Description : Contains all the business topics and exercises  
+ Title : Economics coursebook yr 13 
+ Author : Brian Zziwa  
+ Pages : 899 
+ Description : Contains all economics topics and questions  

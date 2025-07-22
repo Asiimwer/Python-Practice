@@ -14,7 +14,8 @@ student1.introduce()
 print()
 print(student2.name)
 student2.introduce()
-
+print()
+print()
 # Cars class 
 class Car():
     def __init__(self,name,model,year,price):
@@ -80,8 +81,86 @@ class BankAccount():
             print(f"Enter correct input")
 acc001 =BankAccount("Ahumuza Asiimwe",0)
 acc002 = BankAccount("Agaba Kakuru", 0)
-acc001.operator()
+# acc001.operator()
+
+#  Using Inheritence 
+# THIS ALOWS CLASS TO INHERIT PARENT CLASSES
+
+# # SAVINGS ACCOUNT
+# class SavingsAccount(BankAccount):
+#     def __init__(self,acc_holder,balance,interest):
+#         super().__init__(acc_holder,balance)
+#         self.interest_rate = interest
+#     def intrest_calculator(self):
+#         interest = self.bal * interest
+#         self.bal += interest
+# print("Hello there!")
+# print("Welcome to Timbrel Bank. What can we do for you here ? ")
+# print("Start your own interest calculator")  
+# name  = int(input("Enter name : "))  
+# amount = int(input("Enter your amount : "))  
+
+# client003 = SavingsAccount("Ahumuza Asiimwe",20000,0.0)
+
+# School system Class
+student_list = []
+class Student():
+    def __init__(self,s_name,s_class,s_stream):
+        self.name = s_name
+        self.sclass = s_class
+        self.stream = s_stream
+    def profile(self):
+        print(f"Name : {self.name}  \n Class : {self.sclass}  \n Stream : {self.stream} ")
+class ScoreProperties(Student):
+        def __init__ (self,s_name,s_class,s_stream,score1,score2,score3,score4,score5):
+            super().__init__(s_name,s_class,s_stream)
+            self.scores1 = score1
+            self.scores2 = score2
+            self.scores3 = score3
+            self.scores4 = score4
+            self.scores5 = score5
+        def total_grade(self):
+            grades = [self.scores1,self.scores2,self.scores3,self.scores4,self.scores5]
+            total_score = sum(grades)
+            average = total_score/len(grades)
+            print(f"Total Grade : {total_score}")
+            print(f"Average Score : {average: .2f}")
+            if average >= 80:
+                    print("Average Grade: A")
+            elif average >= 70:
+                    print("Average Grade: B")
+            elif average >= 60:
+                    print("Average Grade: C")
+            elif average >= 50:
+                    print("Average Grade: D")
+            else:
+                    print("Average Grade: F")
+        def save_student(self):
+             with open('student_grades.txt', 'a') as file :
+                  file.write(student.profile())
+while True :
+        name = input("Student name : ")
+        print(f"Welcome to student tracker for {name} ")
+        s_class = input("Enter student class : ")
+        stream = input("Enter student Stream : ")
+        score1 = int(input("Input Math score    : ")) 
+        score2 = int(input("Input English score : "))
+        score3 = int(input("Input Science score : "))
+        score4 = int(input("Input Biology score : "))
+        score5 = int(input("Input Chemistry score : "))
+
+        student = ScoreProperties(name,s_class,stream,score1,score2,score3,score4,score5)
+        student.profile()
+        student.total_grade()
+        print("Student registered 🎓")
+        student_list.append(student)
+        nxt_act = input("Type 'y' for yes Or 'n' for No : ").strip().lower()
+        print()
+        if nxt_act != 'y':
+                break
+for i, s in enumerate(student_list, start=1):
+    print(f"{i} : {s}")
+    s.profile()
+    s.total_grade()
 
 
-
-            
