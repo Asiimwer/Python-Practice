@@ -1,0 +1,110 @@
+ 
+ Book Id : 2008 Book Titile : IT coursebook 
+ Book Author : Isaiah 
+ Book description : Bad 
+ Number pages : 1088 
+ Status : available  
+ Book Id : 2008 Book Titile : IT coursebook 
+ Book Author : Isaiah 
+ Book description : Bad 
+ Number pages : 1088 
+ Status : available  
+ Book Id : 2008 Book Titile : IT coursebook 
+ Book Author : Isaiah 
+ Book description : Bad 
+ Number pages : 1088 
+ Status : available  
+ Book Id : 2006 Book Titile : Business coursebook 
+ Book Author : magret n 
+ Book description : Good 
+ Number pages : 899 
+ Status : available  
+ Book Id : 988 Book Titile : Economics Coursebook 
+ Book Author : Brain Zziwa 
+ Book description : borrowed 
+ Number pages : 988 
+ Status : borrowed  
+ Book Id : 1088 Book Titile : IT coursebook 
+ Book Author : Isaiah N 
+ Book description : bad 
+ Number pages : 1088 
+ Status : available  
+ Book Id : 900 Book Titile : 99 
+ Book Author : 99 
+ Book description : 99 
+ Number pages : t 
+ Status : t  
+ Book Id : t Book Titile : t 
+ Book Author : t 
+ Book description : t 
+ Number pages : t 
+ Status : t  
+ Book Id : t Book Titile : t 
+ Book Author : t 
+ Book description : t 
+ Number pages : t 
+ Status : tt  
+ Book Id : tt Book Titile : t 
+ Book Author : t 
+ Book description : tt 
+ Number pages : t 
+ Status : t  
+ Book Id : tt Book Titile : tt 
+ Book Author :  
+ Book description : t 
+ Number pages : t 
+ Status : tt  
+ Book Id : t Book Titile :  
+ Book Author : tt 
+ Book description : t 
+ Number pages : t 
+ Status : tt  
+ Book Id : 2006 Book Titile : bb 
+ Book Author : mg 
+ Book description : gd 
+ Number pages : 899 
+ Status : available  
+ Book Id : 2007 Book Titile : ec 
+ Book Author : bz 
+ Book description : fair 
+ Number pages : 899 
+ Status : borrowed  
+ Book Id : 2008 Book Titile : it 
+ Book Author : in 
+ Book description : bad 
+ Number pages : 1088 
+ Status : available 
+Book Id: 00001
+Title: CAMBRIDGE BUSINESS COURSEBOOK 4th EDITION
+Author: Tr Margret
+Description: Contains all YR : 13 business topics and abudant study material
+Pages: 899
+Status: available
+
+Book Id: 000002
+Title: CAMBRIDGE ECONOMICS COURSEBOOK 3rd EDITION
+Author: Tr Brian Zziwa
+Description: Contains alot of economics topics and quizzes
+Pages: 988
+Status: available
+
+Book Id: 00003
+Title: CAMBRIDGE INFORMATION STUDIES COURSEBOOK 5th EDITION
+Author: Tr Isaiah N
+Description: Contains all ICT fundamentals
+Pages: 1088
+Status: available
+
+Book Id: 00004
+Title: BACKHOUSE PURE MATHEMATICS
+Author: Douglas Ssembusi
+Description: It contains all the content studies at A'level
+Pages: 1000
+Status: available
+
+Book Id: 00005
+Title: Math Cambridge coursebook
+Author: Tr samuel
+Description: Contains all the math concepts that a student is going to need
+Pages: 1099
+Status: available

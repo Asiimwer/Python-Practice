@@ -1,84 +1,150 @@
-class Book():
-    def __init__(self,id,title,author,description,pages):
+import sqlite3
+import os
+
+# Create the table if it doesn't exist
+def create_table():
+    conn = sqlite3.connect('library.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS books(
+            book_id TEXT PRIMARY KEY,
+            title TEXT NOT NULL,
+            author TEXT NOT NULL,
+            description TEXT,
+            pages INTEGER,
+            curriculum TEXT        )
+    ''')
+    conn.commit()
+    conn.close()
+
+# Book class
+class Book:
+    def __init__(self, id, title, author, description, pages, curriculum, subject):
         self.id = id
         self.title = title
         self.author = author
         self.description = description
-        self.pages = pages
+        self.pages = int(pages)
+        self.curriculum = curriculum
+        self.subject = subject
+        # self.status = status
 
     def book_profile(self):
-        print(f" \n Book Id : {self.id} Book Titile : {self.title} \n Book Author : {self.author} \n Book description : {self.description} \n Number pages : {self.pages} ")
-class Library(Book):
-        def __init__(self,id,title,author,description,pages,status):
-            self.status = status
-            super().__init__(id,title,author,description,pages)
-        def status_checker(self):
-            if self.status == "borrowed":
-                print(f"The book {self.title} is Borrowed")
+        print(f"\nBook Id: {self.id}\nTitle: {self.title}\nAuthor: {self.author}\nDescription: {self.description}\nPages: {self.pages}\nStatus: {self.status.capitalize()}")
+
+    def id_checker(self, book_id):
+        return self.id == book_id
+
+# Save book into the database
+def insert_book(book):
+    conn = sqlite3.connect('library.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT OR REPLACE INTO books(book_id, title, author, description, pages, curriculum,subject)
+        VALUES (?, ?, ?, ?, ?, ?,?)
+    ''', (book.id, book.title, book.author, book.description, book.pages, book.curriculum, book.subject))
+    conn.commit()
+    conn.close()
+
+# Library class to manage books
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book: Book):
+        self.books.append(book)
+
+    def book_search(self, book_id):
+        for book in self.books:
+            if book.id_checker(book_id):
+                return book
+        return None
+
+    def books_availability(self):
+        print("\nAvailable Books:")
+        found = False
+        for book in self.books:
+            if book.status == "available":
+                book.book_profile()
+                found = True
+        if not found:
+            print("No available books.")
+
+    def borrow(self):
+        book_id = input("Please enter book ID to borrow: ").strip()
+        book = self.book_search(book_id)
+        if not book:
+            print("Book not found.")
+            return
+
+        if book.status == "borrowed":
+            print("Sorry, the book is already borrowed.")
+            return
+
+        confirm = input(f"Confirm borrowing '{book.title}'? Enter 'yes' to confirm: ").lower()
+        if confirm == "yes":
+            book.status = "borrowed"
+            print(f"You have borrowed '{book.title}'.")
+        else:
+            print("Borrowing cancelled.")
+
+    def operator(self):
+        print("\nInput 1 to check book status")
+        print("Input 2 to check available books")
+        print("Input 3 to borrow a book")
+        activity = input("Enter activity: ").strip()
+        if activity == "1":
+            book_id = input("Enter book ID: ").strip()
+            book = self.book_search(book_id)
+            if book:
+                book.book_profile()
             else:
-                 print(f"The book {self.title} is available")
-        def books_availablity(self):
-             print("Input 1 to see available books")
-             print("Input 2 to see borrowed books")
-             choice = int(input("Enter choice : "))
-             if choice == 1:
-                for book in books:
-                  if self.status == "available":
-                      print(book)
-             elif input == 2:
-                 for book in books:
-                  if self.status == "borrowed":
-                      print(book)
-             else:
-                 print("Enter correct Input")
-        def borrow(self):
-            print("Please enter book ID")
-            book_id = int(input("Book ID : "))
-            # found = False
+                print("Book not found.")
+        elif activity == "2":
+            self.books_availability()
+        elif activity == "3":
+            self.borrow()
+        else:
+            print("Enter a valid choice.")
 
-            while not book_id.isdigit():
-                 print("Enter Integer")
-                 book_id = input("Book ID : ")
-            if book_id == self.id:
-             confirm = input("Enter 'yes' to confirm and 'no' to cancel : ").lower()
-             print(f" \n Book Id : {self.id} Book Titile : {self.title} \n Book Author : {self.author} \n Book description : {self.description} \n Number pages : {self.pages} Status : {self.status}")
+# Main program
+def main():
+    create_table()
+    library = Library()
 
-            if confirm == 'yes':
-                     self.status = "Borrowed"
-            else:
-                print("Please choose another book")  
-        def operator(self):
-            print(" \n Input 1 to check book status \n Input 2 for check for books availability \n Input 3 to borrow")
-            activity = int(input("Enter activity : "))
-            if activity == 1:
-                self.status_checker()
-            elif activity ==2:
-                self.books_availablity()
-            elif activity == 3:
-                self.borrow()
-            else:
-                print("Enter valid code")
-books = []
-# bk_id = input("Input book ID :")
-# while not bk_id.isdigit():
-#     print("Please enter Integer")
-for i in range(3):
-    print(f"Enter infomation for book number {i+1}")
-    bk_id = input("Input book ID :")
-    bk_title= input("Input book Title : ")
-    bk_author = input("Input book  Author : ")
-    bk_description = input("Input book  Description : ")
-    bk_pages = input("Input book  Pages : ")
-    bk_status = input("Input book Status : ")
-    book = Library(bk_id,bk_title,bk_author,bk_description,bk_pages,bk_status)
-    new_book = books.append(book)
-    def save_txt()
-    with open("all_books.txt","a") as file:
-        file.write(books)
-for book in books:
-    book.book_profile()
+    for i in range(3):
+        print(f"\nEnter information for book number {i + 1}:")
+        bk_id = input("Input book ID: ").strip()
+        bk_title = input("Input book Title: ").strip()
+        bk_author = input("Input book Author: ").strip()
+        bk_description = input("Input book Description: ").strip()
+        bk_pages = input("Input number of Pages: ").strip()
+        bk_status = input("Input book Status (available/borrowed): ").strip().lower()
+        bk_curriculum = input("Input book curriculum: ").strip()
+        bk_subject = input("Input Book Subject e.g Business Studies: ").strip()
 
+        book = Book(bk_id, bk_title, bk_author, bk_description, bk_pages, bk_curriculum, bk_subject)
+        library.add_book(book)
+        insert_book(book)
 
-            
+        # Save to text file
+        with open('my_library.txt', 'a') as file:
+            file.write(f"\nBook Id: {bk_id}\nTitle: {bk_title}\nAuthor: {bk_author}\nDescription: {bk_description}\nPages: {bk_pages}\nStatus: {bk_status}\n")
 
-    
+        print("Information has been saved.")
+
+    print("\nAll Books in Library:")
+    for book in library.books:
+        book.book_profile()
+
+    while True:
+        library.operator()
+        choice = input("\nTry another activity? 'y'/'n': ").lower()
+        if choice != 'y':
+            break
+
+# Run main program
+if __name__ == "__main__":
+    main()
+#  LEARN THIS 
+
